@@ -1,0 +1,117 @@
+.header{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 1920px;
+    z-index: 999;
+    background-color: rgb(68, 68, 68);
+    padding: 20px;
+    &__content{
+        &-logo{
+            font-family: $fontMont;
+            font-weight: 700;
+            @include fontStyle(20.67px, $white, normal);
+        }
+        &-mobile{
+            @include fontStyle(17.67px, $white, normal);
+            width: 50px;
+            display: none;
+            .mobile-cart{
+                font-weight: 600;
+                font-size: 14px;
+                color: rgb(28, 125, 221);
+                font-family: $fontMont;
+                margin-left: 10px;
+            }
+        }
+       &-headerBar{
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           
+       }
+       &-leftSide{
+           text-align: right;
+           font-family: $fontMont;
+           font-weight: 600;
+       }
+
+       &-menu{
+           text-transform: uppercase;
+           display: flex;
+       }
+       &-item{
+            &:nth-child(2){
+                margin-left: 50px;
+            }
+            &:nth-child(3){
+            margin-left: 50px;
+            }
+            &:nth-child(4){
+                margin-left: 50px;
+            }
+            &:nth-child(5){
+                margin: auto;
+                width: 70px;
+                a{
+                    color:  rgb(29, 122, 243);
+                    border-bottom: 2px solid  rgb(29, 122, 243);
+                }
+                span{
+                    padding: 5px 5px;
+                    margin-left: 5px;
+                    color:  rgb(69, 169, 250);
+                }
+                margin-left: 50px;
+            }
+       }
+       &-link{
+        @include fontStyle(15.67px, $white, normal);
+       }
+    }
+    @include max-breakpoint(993){
+        &__content{
+            &-logo{
+                @include fontStyle(17.67px, $white, normal);
+            }
+            &-headerBar{
+                flex-wrap: wrap;
+            }
+            &-mobile{
+                display: block;
+            }
+            &-menu{
+                max-height: 0vh;
+                overflow: hidden;
+                flex-direction: column;
+                text-align: left;
+                flex-basis: 100%;
+                transition: all ease-in-out 0.4s;
+                &.show{
+                    max-height: 100vh;
+                }
+            }
+            &-item{
+                padding: 10px 0px;
+                &:nth-child(2){
+                    margin-left: initial;
+                }
+                &:nth-child(3){
+                    margin-left: initial;
+                }
+                &:nth-child(4){
+                    margin-left: initial;
+                }
+                &:nth-child(5){
+                    margin-left: initial;
+                }
+           }
+        }
+    }
+    @include max-breakpoint(614){
+
+    }
+}

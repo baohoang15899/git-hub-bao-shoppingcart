@@ -1,0 +1,49 @@
+.form{
+    @extend .order;
+    &__content{
+        @extend .order__content;
+        &-title{
+            font-family: $fontMont;
+            @include fontStyle(16px,$black,normal);
+            text-transform: uppercase;
+        }
+        &-subTitle{
+            margin-top: 15px;
+            @extend .order__content-title;
+        }
+        &-group{
+            display: grid;
+            grid-template-columns: 379px 379px;
+            column-gap: 28px;
+            row-gap: 28px;
+            input{
+                padding: 15px 10px;
+                outline: none;
+                border: 1px solid rgb(214, 214, 214);
+                border-radius: 4px;
+            }
+            @include max-breakpoint(797){
+                grid-template-columns: 90vw;
+                column-gap: initial;
+            }
+        }
+        &-btn{
+            padding: 15px 10px;
+            background-color: $yellow;
+            border: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-family: $fontMont;
+            @include fontStyle(14px,$black,normal);
+            &:active{
+                background-color: #e6d137;
+            }
+            &:focus{
+                outline: none;
+                border: none;
+                box-shadow: 0 0 0 0.2rem #ccb301;
+            }
+        }
+    }
+}

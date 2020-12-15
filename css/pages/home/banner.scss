@@ -1,0 +1,220 @@
+.banner{
+    padding-top: 150px;
+    padding-bottom: 36px;
+    position: relative;
+    z-index: 200;
+    overflow: hidden;
+    background-color: $yellow;
+    &__leafDown{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 15%;
+        left: 10%;
+        z-index: -1;
+    }
+    &__spa{
+        position: absolute;
+        bottom: -18%;
+        z-index: -1;
+        overflow: hidden;
+        left: 0;
+        width: 150px;
+    }
+    &__leafUp{
+        z-index: -1;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 50px;
+    }
+    &__tomato{
+        z-index: -1;
+        position: absolute;
+        width: 50px;
+        bottom: 20px;
+        right: 50%;
+        height: 50px;
+    }
+    &__pasta{
+        z-index: -1;
+        position: absolute;
+        top: 20%;
+        right: 40%;
+        width: 50px;
+        height: 50px;
+    }
+    &__decoration{
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        right: 0;
+        max-width: 35%;
+        height: 100%;
+    }
+    &__content{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        &-leftSide{
+            padding-left: 83px;
+        }
+        &-rightSide{
+            text-align: center;
+        }
+        &-title{
+            @include fontStyle(45px,black,normal);
+            font-family: $fontMont;
+            font-weight: 500;
+        }
+        &-subTitle{
+            margin-top: 21px;
+            font-family: $fontFre;
+            font-weight: 400;
+            text-transform: uppercase;
+            @include fontStyle(85px,black,normal);
+        }
+        &-description{
+            @include fontStyle(20px,black,normal);
+            margin-top: 21px;
+            font-family: $fontMont;
+            text-transform: uppercase;
+        }
+        &-order{
+            margin-top: 21px;
+            font-family: $fontFre;
+            @include fontStyle(16px,black,normal);
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &-detail{
+            margin-left: 15px;
+            @include fontStyle(38px,black,normal);
+        }
+        &-line{
+            margin: 25px auto;
+            max-width: 280px;
+            background-color: #ccb301;
+            height: 2px;
+        }
+        &-btn{
+            margin-top: 30px;
+            a{
+                position: relative;
+                padding: 10px 40px;
+                @include fontStyle(16px,black,normal);
+                font-family: $fontMont;
+                font-weight: 600;
+                text-transform: uppercase;
+                border: 1px solid $black;
+                color: $black;
+                z-index: 1;
+                &::after{
+                    transition: all ease-in-out 0.4s;
+                    z-index: -1;
+                    position: absolute;
+                    background-color: rgb(238, 236, 236);
+                    content: "";
+                    width: 0%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                }
+                &:hover{
+                    &::after{
+                        width: 100%;
+                    }
+                }
+                &:focus{
+                    outline: none;
+                    border: none;
+                    box-shadow: 0 0 0 0.2rem #ccb301;
+                }
+            }
+        }
+    }
+    @include max-breakpoint(1329){
+        &__content{
+            &-title{
+                @include fontStyle(35px,black,normal);
+            }
+            &-subTitle{
+                @include fontStyle(75px,black,normal);
+            }
+        }
+    }
+    @include max-breakpoint(1260){
+        &__content{
+            &-title{
+                @include fontStyle(35px,black,normal);
+            }
+            &-subTitle{
+                @include fontStyle(65px,black,normal);
+            }
+        }
+    }
+    @include max-breakpoint(993){
+        &__content{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            &-title{
+                @include fontStyle(45px,black,normal);
+            }
+            &-subTitle{
+                @include fontStyle(75px,black,normal);
+            }
+            &-leftSide{
+                margin-top: 50px;
+                padding-left: initial;
+            }
+        }
+    }
+    @include max-breakpoint(614){
+        &__decoration{
+            position: absolute;
+            z-index: -2;
+            top: 0;
+            right: 0;
+            max-width: 50%;
+            height: 100%;
+        }
+        &__content{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            &-title{
+                @include fontStyle(35px,black,normal);
+            }
+            &-subTitle{
+                @include fontStyle(65px,black,normal);
+            }
+            &-leftSide{
+                margin-top: 50px;
+                padding-left: initial;
+            }
+            &-description{
+                @include fontStyle(16px,black,normal);
+            }
+            &-order{
+                @include fontStyle(16px,black,normal);
+            }
+            &-detail{
+                @include fontStyle(24px,black,normal);
+            }
+        }
+    }
+    @include max-breakpoint(400){
+        &__content{
+            &-title{
+                @include fontStyle(20px,black,normal);
+            }
+            &-subTitle{
+                @include fontStyle(40px,black,normal);
+            }
+        }
+    }
+}

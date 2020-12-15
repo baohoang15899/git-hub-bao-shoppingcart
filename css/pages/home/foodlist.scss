@@ -1,0 +1,112 @@
+.order{
+    background-color: $white;
+    &__content{
+        position: relative;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 20;
+        text-align: center;
+        &-decor{
+            @include positionCenter;
+            height: 138px;
+            background-color: #e8e6a9;
+            width: 1920px;
+            z-index: -1;
+        }
+        &-title{
+            font-family: $fontFre;
+            text-transform: uppercase;
+            @include fontStyle(50px,$black,normal);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        &-description{
+            max-width: 1000px;
+            line-height: 28px;
+            @include fontStyle(15px,$black,normal);
+            margin-bottom: 30px;
+            font-family: $fontMont;
+        }
+        &-food{
+            display: grid;
+            grid-template-columns: 277px 277px 277px;
+            column-gap: 140px;
+            @include max-breakpoint(1109){
+                grid-template-columns: 320px;
+                column-gap: initial;
+                row-gap: 40px;
+            }
+            @include max-breakpoint(614){
+                grid-template-columns: 240px;
+            }
+        }
+        &-foodTitle{
+            @include fontStyle(16px,$black,normal);
+            font-family: $fontMont;
+            margin-top: 20px;
+        }
+        &-foodDescription{
+            @include fontStyle(16px,$black,normal);
+            font-family: $fontMont;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+        &-btn{
+            margin-top: 20px;
+            button{
+                outline: none;
+                border: none;
+                padding: 10px 35px;
+                background-color: $yellow;
+                text-transform: uppercase;
+                font-family: $fontMont;
+                font-weight: 600;
+                @include fontStyle(14px,$black,normal);
+                transition: all ease-in-out 0.2s;
+                &:active{
+                    background-color: #dfc546;
+                }
+                &:focus{
+                    outline: none;
+                    border: none;
+                    box-shadow: 0 0 0 0.2rem #ccb301;
+                }
+            }
+        }
+        &-dish{
+            img{
+                height: 277px;
+            }
+            @include max-breakpoint(1109){
+                img{
+                    height: 320px;
+                }
+            }
+            @include max-breakpoint(614){
+                img{
+                    height: 240px;
+                }
+            }
+        }
+        @include max-breakpoint(993){
+            &-title{
+                font-size: 40px;
+            }
+        }
+        @include max-breakpoint(614){
+            &-title{
+                font-size: 30px;
+            }
+            &-description{
+                font-size: 12px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,52 @@
+.footer{
+    background-image: url(../img/BG\ Image.png);
+    background-position: center;
+    background-size: cover;
+    &__content{
+        padding-top: 58px;
+        padding-bottom: 58px;
+        display: flex;
+        justify-content: space-between;
+        &-left{
+            color: $white;
+            max-width: 547px;
+        }
+        &-logo{
+            font-family: $fontMont;
+            @include fontStyle(30px,$yellow,normal);
+            cursor: pointer;
+            font-weight: 500;
+        }
+        &-description{
+            font-family: $fontMont;
+            @include fontStyle(14px,$white,normal);
+            line-height: 30px;
+            margin-top: 60px;
+            margin-bottom: 116px;
+        }
+        &-location{
+            margin-bottom: 20px;
+            display: flex;
+            font-family: $fontMont;
+            @include fontStyle(14px,$white,normal);
+            align-items: center;
+            img{
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &-email{
+            font-family: $fontMont;
+            @include fontStyle(14px,$white,normal);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            img{
+                margin-right: 10px;
+                width: 20px;
+                height: 10px;
+            }
+        }
+    }
+}

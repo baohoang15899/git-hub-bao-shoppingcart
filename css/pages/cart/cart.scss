@@ -1,0 +1,211 @@
+.cart{
+    padding-top: 90px;
+    padding-bottom: 90px;
+    text-align: center;
+    &__content{
+        margin: 20px auto;
+        display: flex;
+        &-title{
+            font-family: $fontFre;
+            @include fontStyle(45px,black,normal);
+            font-weight: 500;
+            @include max-breakpoint(406){
+                font-size: 35px;
+            }
+        }
+        &-detail{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            .name{
+                margin-left: 15px;
+            }
+            .delete{
+                margin-right: 15px;
+            }
+            @include max-breakpoint(406){
+                font-size: 14px;
+            }
+        }
+        &-wrap{
+            width: 65%;
+        }
+        &-list{
+            border-radius: 4px;
+            font-family: $fontMont;
+            ul{
+                li{
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    color: $white;
+                    background-color: rgb(77, 77, 77);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .name{
+                        width: 70px;
+                    }
+                    .price{
+                        width: 70px;
+                    }
+                    span{
+                        button{
+                            padding: 5px 20px;
+                            font-family: $fontMont;
+                            text-transform: uppercase;
+                            outline: none;
+                            border: none;
+                            background-color: rgb(243, 93, 39);
+                            &:active {
+                                background-color: rgb(223, 82, 31);
+                              }
+                            &:focus{
+                                box-shadow: 0 0 0 0.2rem rgb(250, 128, 84) ;
+                            }
+                        }
+                    }
+                    .quantity{
+                        input{
+                            border-radius: 8px;
+                            text-align: center;
+                            outline: none;
+                            border: none;
+                            &::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                              }
+                        }
+                        button{
+                            width: 25px;
+                            height: 25px;
+                            font-size: 18px;
+                            padding: 2px 5px;
+                            border-radius: 50%;
+                            background-color: rgb(243, 93, 39);
+                            &:active {
+                                background-color: rgb(223, 82, 31);
+                              }
+                            &:focus{
+                                box-shadow: 0 0 0 0.2rem rgb(250, 128, 84) ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include max-breakpoint(915){
+            flex-direction: column;
+            justify-content: center;
+            &-wrap{
+                width: 100%;
+            }
+        }
+        @include max-breakpoint(406){
+            ul{
+                li{
+                    .name{
+                        width: 25px;
+                        font-size: 12px;
+                    }
+                    .price{
+                        width: 25px;
+                        font-size: 12px;
+                    }
+                    span{
+                        button{
+                            padding: 5px 10px;
+                            font-size: 12px;
+                        }
+                    }
+                    .quantity{
+                        input{
+                            width: 20px;
+                        }
+                        button{
+                            width: 20px;
+                            height: 20px;
+                            font-size: 14px;
+                            padding: 2px 5px;
+                            border-radius: 50%;
+                            background-color: rgb(243, 93, 39);
+                            &:active {
+                                background-color: rgb(223, 82, 31);
+                              }
+                            &:focus{
+                                box-shadow: 0 0 0 0.2rem rgb(250, 128, 84) ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__total{
+        width: 35%;
+        border-radius: 4px;
+        margin-left: 20px;
+        background-color: rgb(59, 59, 59);
+        color: $white;
+        &-title{
+            font-family: $fontMont;
+            @include fontStyle(20px,$white,normal);
+            margin-top: 20px;
+            text-align: center;
+        }
+        &-message{
+            @include fontStyle(16px,$white,italic);
+            font-family: $fontMont;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        &-subTotal{
+            margin-top: 20px;
+            font-family: $fontMont;
+            margin-left: 20px;
+            text-align: left;
+            @include fontStyle(18px,$white,normal);
+        }
+        &-ship{
+            margin-top: 20px;
+            font-family: $fontMont;
+            margin-left: 20px;
+            text-align: left;
+            @include fontStyle(18px,$white,normal);
+        }
+        &-final{
+            margin-top: 30px;
+            font-family: $fontMont;
+            margin-left: 20px;
+            text-align: left;
+            @include fontStyle(20px,$white,normal);
+        }
+        &-checkout{
+            font-family: $fontMont;
+            font-weight: 500;
+            margin: 30px auto;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            background-color: rgb(243, 93, 39);
+            @include fontStyle(18px,rgb(39, 39, 39),normal);
+            width: 80%;
+            &:active {
+                background-color: rgb(223, 82, 31);
+              }
+            &:focus{
+                box-shadow: 0 0 0 0.2rem rgb(250, 128, 84) ;
+            }
+        }
+        &-description{
+            @include fontStyle(15px,$white,italic);
+            font-family: $fontMont;
+            margin-bottom: 20px;
+        }
+        @include max-breakpoint(915){
+            margin-left: 0px;
+            margin: auto;
+            width: 100%;
+        }
+    }
+}

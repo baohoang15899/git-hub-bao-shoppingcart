@@ -1,0 +1,152 @@
+.slide{
+    @extend .order;
+    &__content{
+        @extend .order__content;
+        &-title{
+            font-family: $fontMont;
+            @include fontStyle(16px,$black,normal);
+            text-transform: uppercase;
+        }
+        &-subTitle{
+            margin-top: 15px;
+            @extend .order__content-title;
+        }
+        &-description{
+            @extend .order__content-description;
+        }
+        &-img{
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            @include max-breakpoint(1109){
+                grid-template-columns: 1fr;
+                row-gap: 30px;
+            }
+        }
+        &-dish{
+            position: relative;
+            transition: all ease-in-out 0.2s;
+            cursor: pointer;
+            &.show{
+                z-index: 100;
+                transform: scale(1.1);
+                &::after{
+                    z-index: 100;
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                }
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: rgb(36, 35, 35), $alpha: 0.9);
+            }
+            @include max-breakpoint(1109){
+                &.show{
+                    transform: none;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                }
+            }
+        }
+        &-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            @include max-breakpoint(1109){
+                display: none;
+            }
+        }
+        &-dot{
+            cursor: pointer;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color:#dcdcdc;
+            &:nth-child(2){
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            &.show{
+                background-color: $yellow;
+            }
+        }
+        &-banner{
+            margin-top: 97px;
+            display: flex;
+            @include max-breakpoint(1108){
+                flex-direction: column;
+            }
+        }
+        &-detail{
+            position: relative;
+          &:nth-child(1){
+              margin-right: 40px;
+              @include max-breakpoint(1109){
+                margin-bottom: 58px;
+            }
+          }
+          &:nth-child(2){
+              .slide__content-detailWrap{
+                  &:nth-child(2){
+                      margin-top: 38px;
+                  }
+              }
+          }
+          @include max-breakpoint(1108){
+            &:nth-child(1){
+                margin-right: initial;
+            }
+            img{
+                max-width: 100%;
+            }
+        }
+        }
+        &-detailWrap{
+            position: relative;
+        }
+        &-text{
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            text-transform: uppercase;
+            @include fontStyle(30px,$white,normal);
+            text-align: left;
+            font-family: $fontMont;
+            font-weight: 700;
+            span{
+                @include fontStyle(20px,$white,normal);
+                font-weight: 600;
+            }
+            @include max-breakpoint(620){
+                @include fontStyle(20px,$white,normal);
+                span{
+                    @include fontStyle(16px,$white,normal);
+                }
+            }
+            @include max-breakpoint(357){
+                @include fontStyle(16px,$white,normal);
+                span{
+                    @include fontStyle(14px,$white,normal);
+                }
+            }
+        }
+    }
+}
