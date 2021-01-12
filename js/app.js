@@ -54,7 +54,6 @@ function updateQuantity(i,quantity){
     if (quantity <1) {
         quantity = 1
         food[i].quantity = 1
-        return
     }
     food[i].quantity = quantity
     localStorage.setItem("bao_shopping_cart_food",JSON.stringify(food))
